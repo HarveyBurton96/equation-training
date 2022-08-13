@@ -8,7 +8,43 @@
     <title>Equation training!</title>
 </head>
 <body>
-    
+    <div class="text-box">
+        <h1>Equation training!</h1>
+    </div>
+
+    <div class="text-box">
+        <p>
+            Can you solve the equation?
+        </p>
+        <button data-type="newEquation" class="button newEquation">
+            New equation
+        </button>
+        <p class="score">
+            Correct: <span id="correct">0</span>
+        </p>
+        <p class="score">
+            Incorrect: <span id="incorrect">0</span>
+        </p>
+    </div>
+
+    <div class="text-box">
+        <div class="equation">
+            <span id="operand1">0</span>
+            <span>=</span>
+            <span id="operand2">0</span>
+            <span>y</span>
+            <span id="operand3">-</span>
+            <span id="operand4">0</span>
+        </div>
+        <div class="solution">
+            
+        </div>
+        <p>y=</p>
+        <input type="number" id="answer">
+        <button data-type="submit" class="button submit">
+            Submit
+        </button>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>

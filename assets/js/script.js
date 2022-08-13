@@ -16,12 +16,39 @@ document.addEventListener('DOMContentLoaded', function() {
 } newEquation();
 })
 
+/**
+ * Creates random numbers to build our equation with
+ */
+function newEquation() {
+    let num1 = Math.floor(Math.random()*11)+2;
+    let num2 = Math.floor(Math.random()*12)+1;
+    let num3 = Math.floor(Math.random()*12)+1;
+    let symbolNum = Math.floor(Math.random()*2);
+
+    if(symbolNum === 0) {
+        var symbol = '-'
+        console.log('-')
+    } else {
+        var symbol ='+'
+    }
+
+    document.getElementById('operand2').textContent = num1;
+    document.getElementById('operand3').textContent = symbol;
+    document.getElementById('operand4').textContent = num3;
+}
+
+function calculateEquation(){
+
+}
 
 function checkAnswer() {
     console.log('answer');
 }
 
-function newEquation() {
-    console.log('equation');
+function incrementCorrectScore() {
+
 }
 
+function incrementIncorrectScore() {
+
+}

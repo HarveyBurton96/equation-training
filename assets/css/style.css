@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nanum+Gothic&family=Open+Sans:wght@300&family=PT+Sans&display=swap');
+
 body {
-    background:red;
+    font-family: lato, Open Sans;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow-x: hidden;
+    background-color: #6C9175;
+}
+
+.heading {
+    font-family: Nanum Gothic, PT Sans;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.text-box {
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    border: 1px solid #292929;
+    background-color: #7BA69E;
+    text-align: center;
 }

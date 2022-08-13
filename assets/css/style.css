@@ -7,6 +7,7 @@ body {
     border: none;
     overflow-x: hidden;
     background-color: #6C9175;
+    font-size: large;
 }
 
 .heading {
@@ -18,9 +19,75 @@ body {
 .text-box {
     width: 75%;
     height: auto;
-    margin: 0 auto;
-    margin-bottom: 3em;
+    margin: 0 auto 3em;
+    padding: 1em 0 1em;
     border: 1px solid #292929;
     background-color: #7BA69E;
     text-align: center;
+}
+
+.score {
+    display: inline-block;
+    margin: 0 100px;
+    font-weight: bold;
+}
+
+.score_correct {
+    color: green;
+}
+
+.score_incorrect {
+    color: red;
+}
+
+#answer {
+    display: inline-block;
+    height: 35px;
+    width: 80px;
+}
+
+.answer-text {
+    width: 40px;
+    display: inline-block;
+}
+
+.equation-box {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.equation {
+    margin-bottom: 1em;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.button {
+    font-weight: bold;
+    font-size: large;
+}
+
+.newEquation{
+    height: 60px;
+    width: 200px;
+    margin-bottom: 1em;
+}
+
+.newEquation:hover{
+    text-decoration: underline;
+}
+
+.submit {
+    height: 60px;
+    width: 120px;
+    margin-top: 1em;
+}
+
+.submit:hover {
+    text-decoration: underline;
 }

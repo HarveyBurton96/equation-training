@@ -14,39 +14,41 @@
 
     <div class="text-box">
         <p>
-            Can you solve the equation?
+            Can you solve the equation<br>and find what y is!
         </p>
         <button data-type="newEquation" class="button newEquation">
             New equation
         </button>
-        <p class="score">
+        <br>
+        <p class="score score_correct">
             Correct: <span id="correct">0</span>
         </p>
-        <p class="score">
+        <p class="score score_incorrect">
             Incorrect: <span id="incorrect">0</span>
         </p>
     </div>
 
-    <div class="text-box">
+    <div class="text-box equation-box">
         <div class="equation">
             <span id="operand1">0</span>
-            <span>=</span>
+            <span> = </span>
             <span id="operand2">0</span>
-            <span>y</span>
+            <span>y </span>
             <span id="operand3">-</span>
             <span id="operand4">0</span>
         </div>
         <div class="solution">
 
         </div>
-        <p>y=</p>
+        <p class="answer-text">y = </p>
         <input type="number" id="answer">
+        <br>
         <button data-type="submit" class="button submit">
             Submit
         </button>
     </div>
 
-    <footer class="footer text-box">
+    <footer class="text-box" id="footer">
         <p>Hint: Remember whatever you do to one side of the equation must also be done to the other!</p>
 
     </footer>

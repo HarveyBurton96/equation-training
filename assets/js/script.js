@@ -24,17 +24,25 @@ function newEquation() {
     let num2 = Math.floor(Math.random()*12)+1;
     let num3 = Math.floor(Math.random()*12)+1;
     let symbolNum = Math.floor(Math.random()*2);
-
+    console.log(num2)
     if(symbolNum === 0) {
         var symbol = '-'
-        console.log('-')
+        
+        while (num1*num2 < num3) {
+            num2 = Math.floor(Math.random()*12)+1;
+        }
+
+        console.log(num2)
+
     } else {
         var symbol ='+'
     }
 
+    
     document.getElementById('operand2').textContent = num1;
     document.getElementById('operand3').textContent = symbol;
     document.getElementById('operand4').textContent = num3;
+    
 }
 
 function calculateEquation(){

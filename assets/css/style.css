@@ -82,12 +82,12 @@ body {
     text-decoration: underline;
 }
 
-.submit {
+#submit {
     height: 60px;
     width: 120px;
     margin-top: 1em;
 }
 
-.submit:hover {
+#submit:hover {
     text-decoration: underline;
 }

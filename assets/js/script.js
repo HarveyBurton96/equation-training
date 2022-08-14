@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             checkAnswer();
         } else {
             newEquation();
+            enableSubmitButton()
         }
     })
 
@@ -82,6 +83,8 @@ function checkAnswer() {
     }
 
     displaySolution()
+
+    disableSubmitButton()
 }
 
 /** 
@@ -119,7 +122,12 @@ function displaySolution() {
     <p>(÷ ${document.getElementById('operand2').innerText})</p>
     <p>y = ${num2}</p>
     `
+}
 
-    
+function disableSubmitButton() {
+    document.getElementById('submit').disabled=true
+}
 
+function enableSubmitButton() {
+    document.getElementById('submit').disabled=false
 }

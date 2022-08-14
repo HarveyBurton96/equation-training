@@ -18,13 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /**
  * Creates random numbers to build our equation with
+ * Also assigned if the symbol in the equation will be - or +
  */
 function newEquation() {
     let num1 = Math.floor(Math.random()*11)+2;
     let num2 = Math.floor(Math.random()*12)+1;
     let num3 = Math.floor(Math.random()*12)+1;
     let symbolNum = Math.floor(Math.random()*2);
-    console.log(num2)
+    
     if(symbolNum === 0) {
         var symbol = '-'
         
@@ -32,10 +33,12 @@ function newEquation() {
             num2 = Math.floor(Math.random()*12)+1;
         }
 
-        console.log(num2)
+        calculateEquationMinus(num1, num2, num3)
 
     } else {
         var symbol ='+'
+
+        calculateEquationPlus(num1, num2, num3)
     }
 
     
@@ -45,8 +48,14 @@ function newEquation() {
     
 }
 
-function calculateEquation(){
+function calculateEquationPlus(num1, num2, num3){
+    let num4 = num1*num2 + num3
+    document.getElementById('operand1').textContent = num4;
+}
 
+function calculateEquationMinus(num1, num2, num3) {
+    let num4 = num1*num2 - num3
+    document.getElementById('operand1').textContent = num4;
 }
 
 function checkAnswer() {

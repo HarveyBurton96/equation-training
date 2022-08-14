@@ -54,6 +54,7 @@ body {
 .equation-box {
     font-size: larger;
     font-weight: bold;
+    margin-bottom: 200px;
 }
 
 .equation {
@@ -91,4 +92,12 @@ body {
 
 #submit:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 350px) {
+
+    .text-box {
+        width: 100%;
+    }
+
 }

@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Declared outside of functions so it can be used in the checkAnswer() function
 let num2;
+let num1;
 
 /**
  * Creates random numbers to build our equation with
@@ -104,6 +105,7 @@ function incrementIncorrectScore() {
 function displaySolution() {
 
     let symbol = document.getElementById('operand3').innerText
+    let multiple = document.getElementById('operand2').innerText * num2
 
     if (symbol==='-') {
         symbol = '+'
@@ -113,6 +115,9 @@ function displaySolution() {
 
     document.getElementById('solution').innerHTML =`
     <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
+    <p>${multiple} = ${document.getElementById('operand2').innerText} y</p>
+    <p>(÷ ${document.getElementById('operand2').innerText})</p>
+    <p>y = ${num2}</p>
     `
 
     

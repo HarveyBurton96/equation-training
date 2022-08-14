@@ -16,13 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
 } newEquation();
 })
 
+let num2;
 /**
  * Creates random numbers to build our equation with
  * Also assigned if the symbol in the equation will be - or +
  */
 function newEquation() {
     let num1 = Math.floor(Math.random()*11)+2;
-    let num2 = Math.floor(Math.random()*12)+1;
+    num2 = Math.floor(Math.random()*12)+1;
     let num3 = Math.floor(Math.random()*12)+1;
     let symbolNum = Math.floor(Math.random()*2);
     
@@ -59,13 +60,22 @@ function calculateEquationMinus(num1, num2, num3) {
 }
 
 function checkAnswer() {
-    console.log('answer');
+    let userAnswer = parseInt(document.getElementById('answer').value);
+    if (userAnswer === num2) {
+        incrementCorrectScore()
+    } else {
+        incrementIncorrectScore()
+    }
 }
 
 function incrementCorrectScore() {
+    let previousScore = parseInt(document.getElementById('correct').innerText)
+    document.getElementById('correct').innerText = ++previousScore
 
 }
 
 function incrementIncorrectScore() {
+    let previousScore = parseInt(document.getElementById('incorrect').innerText)
+    document.getElementById('incorrect').innerText = ++previousScore
 
 }

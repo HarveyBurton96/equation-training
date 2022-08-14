@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             newEquation();
             enableSubmitButton()
+            clearDisplaySolution()
+            emptyPreviousAnswer()
         }
     })
 
@@ -124,10 +126,18 @@ function displaySolution() {
     `
 }
 
+function clearDisplaySolution(){
+    document.getElementById('solution').innerHTML = ``;
+}
+
 function disableSubmitButton() {
     document.getElementById('submit').disabled=true
 }
 
 function enableSubmitButton() {
     document.getElementById('submit').disabled=false
+}
+
+function emptyPreviousAnswer() {
+    document.getElementById('answer').value='';
 }

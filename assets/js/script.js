@@ -79,6 +79,8 @@ function checkAnswer() {
     } else {
         incrementIncorrectScore()
     }
+
+    displaySolution()
 }
 
 /** 
@@ -96,5 +98,23 @@ function incrementCorrectScore() {
 function incrementIncorrectScore() {
     let previousScore = parseInt(document.getElementById('incorrect').innerText)
     document.getElementById('incorrect').innerText = ++previousScore
+
+}
+
+function displaySolution() {
+
+    let symbol = document.getElementById('operand3').innerText
+
+    if (symbol==='-') {
+        symbol = '+'
+    } else {
+        symbol = '-'
+    }
+
+    document.getElementById('solution').innerHTML =`
+    <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
+    `
+
+    
 
 }

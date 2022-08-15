@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Open+Sans:wght@300&family=PT+Sans&family=Pangolin&family=Roboto&display=swap');
 
 /* Style for the index page*/
 body {
-    font-family: lato, Open Sans;
+    font-family: Pangolin, Open Sans;
     margin: 0;
     padding: 0;
     border: none;
@@ -29,6 +29,7 @@ body {
     border: 2px solid #000000;
     background-color: #31343A;
     text-align: center;
+    font-size: larger;
 }
 
 .score {
@@ -61,6 +62,7 @@ body {
     font-size: larger;
     font-weight: bold;
     margin-bottom: 200px;
+    font-family: Kalam, Pangolin, Open Sans;
 }
 
 .equation {
@@ -81,6 +83,8 @@ body {
     background-color: #20433e;
     color: #FFFFFF;
     border:#000000 solid 2px;
+    font-family: Pangolin, Open Sans;
+    letter-spacing: 0.1em;
 }
 
 .newEquation{

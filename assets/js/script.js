@@ -186,6 +186,7 @@ function clearDisplaySolution(){
  */
 function disableSubmitButton() {
     document.getElementById('submit').disabled=true;
+    
 }
 
 /**

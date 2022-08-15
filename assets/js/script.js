@@ -15,9 +15,19 @@ document.addEventListener('DOMContentLoaded', function() {
             emptyPreviousAnswer();
             clearDisplayResponse ();
         }
+
     });
 
-} newEquation();
+} 
+
+// Listens for the enter button and checks the submit question is not disabled
+document.getElementById('answer').addEventListener('keydown', function(event){
+    if((event.key === 'Enter') && (document.getElementById('submit').disabled === false)) {
+        checkAnswer();
+    }
+    })
+
+newEquation();
 });
 
 // Declared outside of functions so it can be used in the checkAnswer() function
@@ -29,6 +39,9 @@ let num1;
  * Also assigned if the symbol in the equation will be - or +
  */
 function newEquation() {
+
+    document.getElementById('answer').focus();
+
     let num1 = Math.floor(Math.random()*11)+2;
     num2 = Math.floor(Math.random()*12)+1;
     let num3 = Math.floor(Math.random()*12)+1;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nanum+Gothic&family=Open+Sans:wght@300&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto&display=swap');
 
 body {
     font-family: lato, Open Sans;
@@ -15,7 +15,7 @@ body {
 }
 
 .heading {
-    font-family: Nanum Gothic, PT Sans;
+    font-family: Roboto, PT Sans;
     text-decoration: underline;
     text-align: center;
 }
@@ -25,7 +25,7 @@ body {
     height: auto;
     margin: 0 auto 3em;
     padding: 1em 0 1em;
-    border: 1px solid #292929;
+    border: 2px solid #000000;
     background-color: #31343A;
     text-align: center;
 }
@@ -55,7 +55,8 @@ body {
 #answer {
     display: inline-block;
     height: 35px;
-    width: 80px;
+    width: 50px;
+    font-size: larger;
 }
 
 .answer-text {

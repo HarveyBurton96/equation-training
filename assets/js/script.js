@@ -132,12 +132,12 @@ function displaySolution() {
 }
 
 function displayResponseCorrect() {
-    document.getElementById('response').innerHTML = '<p class=correct>Correct</p>'
+    document.getElementById('response').innerHTML = '<p class=score_correct>Correct</p>'
 
 }
 
 function displayResponseIncorrect() {
-    document.getElementById('response').innerHTML = '<p class=incorrect>Incorrect</p>'
+    document.getElementById('response').innerHTML = '<p class=score_incorrect>Incorrect</p>'
 
 }
 

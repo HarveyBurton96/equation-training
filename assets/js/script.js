@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             checkAnswer();
         } else if (this.getAttribute('data-type') === 'hint') {
             revealHint();
+            addClick();
         } else {
             newEquation();
             enableSubmitButton();
@@ -35,12 +36,15 @@ newEquation();
 // Declared outside of functions so it can be used in the checkAnswer() function
 let num2;
 let num1;
+let click
 
 /**
  * Creates random numbers to build our equation with
  * Also assigned if the symbol in the equation will be - or +
  */
 function newEquation() {
+
+    click = 0;
 
     document.getElementById('answer').focus();
 
@@ -207,9 +211,10 @@ function emptyPreviousAnswer() {
 }
 
 /**
- * Reveals the first line of the solution
+ * Reveals the lines of the solution corresponding to the number of times the hint button has been clicked
  */
 function revealHint() {
+
     let symbol = document.getElementById('operand3').innerText;
 
     if (symbol==='-') {
@@ -217,7 +222,36 @@ function revealHint() {
     } else {
         symbol = '-';
     }
+    let multiple = document.getElementById('operand2').innerText * num2;
 
-    document.getElementById('solution').innerHTML =`
-    <p>(${symbol} ${document.getElementById('operand4').innerText})</p>`
+    if (click === 0 ) {
+        document.getElementById('solution').innerHTML =`
+        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>`
+    } else if (click === 1) {
+        document.getElementById('solution').innerHTML =`
+        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
+        <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>`
+    } else if (click === 2) {
+        document.getElementById('solution').innerHTML =`
+        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
+        <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>
+        <p>${document.getElementById('operand2').innerText} y = ${multiple}</p>`
+    } else if (click === 3) {
+        document.getElementById('solution').innerHTML =`
+        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
+        <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>
+        <p>${document.getElementById('operand2').innerText} y = ${multiple}</p>
+        <p>(÷ ${document.getElementById('operand2').innerText})</p>`
+    } else if (click === 4) {
+        document.getElementById('solution').innerHTML =`
+        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
+        <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>
+        <p>${document.getElementById('operand2').innerText} y = ${multiple}</p>
+        <p>(÷ ${document.getElementById('operand2').innerText})</p>
+        <p>y = ${multiple} ÷ ${document.getElementById('operand2').innerText}</p>`
+    }
+}
+
+function addClick(){
+    click += 1;
 }

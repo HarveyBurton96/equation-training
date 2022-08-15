@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
             checkAnswer();
         } else {
             newEquation();
-            enableSubmitButton()
-            clearDisplaySolution()
-            emptyPreviousAnswer()
-            clearDisplayResponse ()
+            enableSubmitButton();
+            clearDisplaySolution();
+            emptyPreviousAnswer();
+            clearDisplayResponse ();
         }
-    })
+    });
 
 } newEquation();
-})
+});
 
 // Declared outside of functions so it can be used in the checkAnswer() function
 let num2;
@@ -34,21 +34,21 @@ function newEquation() {
     let num3 = Math.floor(Math.random()*12)+1;
     let symbolNum = Math.floor(Math.random()*2);
     
-    // Asigns symbol for the equation 
+    // Assigns symbol for the equation 
     if(symbolNum === 0) {
-        var symbol = '-'
+        var symbol = '-';
         
         // Checks that if the symbol is - then number times y is less than number 3
         while (num1*num2 < num3) {
             num2 = Math.floor(Math.random()*12)+1;
         }
 
-        calculateEquationMinus(num1, num2, num3)
+        calculateEquationMinus(num1, num2, num3);
 
     } else {
-        var symbol ='+'
+        var symbol ='+';
 
-        calculateEquationPlus(num1, num2, num3)
+        calculateEquationPlus(num1, num2, num3);
     }
 
     
@@ -59,18 +59,18 @@ function newEquation() {
 }
 
 /** 
- * Calculates whats the equatuion is equal to if the symbol is +
+ * Calculates what's the equation is equal to if the symbol is +
 */
 function calculateEquationPlus(num1, num2, num3){
-    let num4 = num1*num2 + num3
+    let num4 = num1*num2 + num3;
     document.getElementById('operand1').textContent = num4;
 }
 
 /** 
- * Calculates whats the equatuion is equal to if the symbol is -
+ * Calculates what's the equation is equal to if the symbol is -
 */
 function calculateEquationMinus(num1, num2, num3) {
-    let num4 = num1*num2 - num3
+    let num4 = num1*num2 - num3;
     document.getElementById('operand1').textContent = num4;
 }
 
@@ -80,24 +80,24 @@ function calculateEquationMinus(num1, num2, num3) {
 function checkAnswer() {
     let userAnswer = parseInt(document.getElementById('answer').value);
     if (userAnswer === num2) {
-        incrementCorrectScore()
-        displayResponseCorrect()
+        incrementCorrectScore();
+        displayResponseCorrect();
     } else {
-        incrementIncorrectScore()
-        displayResponseIncorrect()
+        incrementIncorrectScore();
+        displayResponseIncorrect();
     }
 
-    displaySolution()
+    displaySolution();
 
-    disableSubmitButton()
+    disableSubmitButton();
 }
 
 /** 
  * Adds one to the score for the correct answer
 */
 function incrementCorrectScore() {
-    let previousScore = parseInt(document.getElementById('correct').innerText)
-    document.getElementById('correct').innerText = ++previousScore
+    let previousScore = parseInt(document.getElementById('correct').innerText);
+    document.getElementById('correct').innerText = ++previousScore;
 
 }
 
@@ -105,20 +105,23 @@ function incrementCorrectScore() {
  * Adds one to the score for the incorrect answer
 */
 function incrementIncorrectScore() {
-    let previousScore = parseInt(document.getElementById('incorrect').innerText)
-    document.getElementById('incorrect').innerText = ++previousScore
+    let previousScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('incorrect').innerText = ++previousScore;
 
 }
 
+/**
+ * Inserts HTML code into the index page displaying the steps to solve the equation
+ */
 function displaySolution() {
 
-    let symbol = document.getElementById('operand3').innerText
-    let multiple = document.getElementById('operand2').innerText * num2
+    let symbol = document.getElementById('operand3').innerText;
+    let multiple = document.getElementById('operand2').innerText * num2;
 
     if (symbol==='-') {
-        symbol = '+'
+        symbol = '+';
     } else {
-        symbol = '-'
+        symbol = '-';
     }
 
     document.getElementById('solution').innerHTML =`
@@ -128,35 +131,58 @@ function displaySolution() {
     <p>(÷ ${document.getElementById('operand2').innerText})</p>
     <p>y = ${multiple} ÷ ${document.getElementById('operand2').innerText}</p>
     <p>y = ${num2}</p>
-    `
+    `;
 }
 
+/**
+ * Inserts HTML code into the index page declaring the answer is correct
+ */
 function displayResponseCorrect() {
-    document.getElementById('response').innerHTML = '<p class=score_correct>Correct</p>'
+    document.getElementById('response').innerHTML = '<p class=score_correct>Correct</p>';
 
 }
 
+/**
+ * Inserts HTML code into the index page declaring the answer is incorrect
+ */
 function displayResponseIncorrect() {
-    document.getElementById('response').innerHTML = '<p class=score_incorrect>Incorrect</p>'
+    document.getElementById('response').innerHTML = '<p class=score_incorrect>Incorrect</p>';
 
 }
 
+/**
+ * Inserts HTML code into the index page removing the HTML code inserted 
+ * by displayResponseCorrect() or displayResponseIncorrect() functions
+ */
 function clearDisplayResponse () {
     document.getElementById('response').innerHTML = ``;
 }
 
+/**
+ * Inserts HTML code into the index page removing the HTML code inserted 
+ * by displaySolution() function
+ */
 function clearDisplaySolution(){
     document.getElementById('solution').innerHTML = ``;
 }
 
+/**
+ * Disables the submit button
+ */
 function disableSubmitButton() {
-    document.getElementById('submit').disabled=true
+    document.getElementById('submit').disabled=true;
 }
 
+/**
+ * Enables the submit button
+ */
 function enableSubmitButton() {
-    document.getElementById('submit').disabled=false
+    document.getElementById('submit').disabled=false;
 }
 
+/**
+ * Removes the answer given by the user
+ */
 function emptyPreviousAnswer() {
     document.getElementById('answer').value='';
 }

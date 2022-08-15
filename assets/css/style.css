@@ -40,7 +40,15 @@ body {
     color: #59EB35;
 }
 
+.correct {
+    color: #59EB35;
+}
+
 .score_incorrect {
+    color: #FD7E79;
+}
+
+.incorrect {
     color: #FD7E79;
 }
 
@@ -99,7 +107,7 @@ body {
 }
 
 @media (max-width: 1100px) {
-    
+
     body {
         background-size: 150%;
     }

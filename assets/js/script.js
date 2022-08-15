@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             enableSubmitButton()
             clearDisplaySolution()
             emptyPreviousAnswer()
+            clearDisplayResponse ()
         }
     })
 
@@ -80,8 +81,10 @@ function checkAnswer() {
     let userAnswer = parseInt(document.getElementById('answer').value);
     if (userAnswer === num2) {
         incrementCorrectScore()
+        displayResponseCorrect()
     } else {
         incrementIncorrectScore()
+        displayResponseIncorrect()
     }
 
     displaySolution()
@@ -126,6 +129,20 @@ function displaySolution() {
     <p>y = ${multiple} ÷ ${document.getElementById('operand2').innerText}</p>
     <p>y = ${num2}</p>
     `
+}
+
+function displayResponseCorrect() {
+    document.getElementById('response').innerHTML = '<p class=correct>Correct</p>'
+
+}
+
+function displayResponseIncorrect() {
+    document.getElementById('response').innerHTML = '<p class=incorrect>Incorrect</p>'
+
+}
+
+function clearDisplayResponse () {
+    document.getElementById('response').innerHTML = ``;
 }
 
 function clearDisplaySolution(){

@@ -120,8 +120,10 @@ function displaySolution() {
 
     document.getElementById('solution').innerHTML =`
     <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
+    <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>
     <p>${document.getElementById('operand2').innerText} y = ${multiple}</p>
     <p>(÷ ${document.getElementById('operand2').innerText})</p>
+    <p>y = ${multiple} ÷ ${document.getElementById('operand2').innerText}</p>
     <p>y = ${num2}</p>
     `
 }

@@ -157,7 +157,20 @@ function displaySolution() {
  * Inserts HTML code into the index page declaring the answer is correct
  */
 function displayResponseCorrect() {
-    document.getElementById('response').innerHTML = '<p class=score_correct>Correct</p>';
+
+    if (click === 0) {
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct A+ No Hint required!</p>';
+    } else if (click === 1) {
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct A One Hint required</p>';
+    } else if (click === 2) {
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct B+ Two Hints required</p>';
+    } else if (click === 3) {
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct B Three Hints required</p>';
+    } else if (click === 4) {
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct C+ Four Hints required</p>';
+    } else if (click === 5) {
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct C Five Hints required</p>';
+    }
 
 }
 

@@ -183,17 +183,20 @@ function clearDisplaySolution(){
 
 /**
  * Disables the submit button
+ * and the hint button
  */
 function disableSubmitButton() {
     document.getElementById('submit').disabled=true;
-    
+    document.getElementById('hint').disabled=true;
 }
 
 /**
  * Enables the submit button
+ * and the hint button
  */
 function enableSubmitButton() {
     document.getElementById('submit').disabled=false;
+    document.getElementById('hint').disabled=false;
 }
 
 /**

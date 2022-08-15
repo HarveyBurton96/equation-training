@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(){
         if (this.getAttribute('data-type') === 'submit') {
             checkAnswer();
+        } else if (this.getAttribute('data-type') === 'hint') {
+            revealHint();
         } else {
             newEquation();
             enableSubmitButton();
@@ -198,4 +200,20 @@ function enableSubmitButton() {
  */
 function emptyPreviousAnswer() {
     document.getElementById('answer').value='';
+}
+
+/**
+ * Reveals the first line of the solution
+ */
+function revealHint() {
+    let symbol = document.getElementById('operand3').innerText;
+
+    if (symbol==='-') {
+        symbol = '+';
+    } else {
+        symbol = '-';
+    }
+
+    document.getElementById('solution').innerHTML =`
+    <p>(${symbol} ${document.getElementById('operand4').innerText})</p>`
 }

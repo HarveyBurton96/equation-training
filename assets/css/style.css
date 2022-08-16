@@ -129,12 +129,22 @@ body {
         background-size: 150%;
     }
 
+    #footer_text {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
 }
 
 @media (max-width: 700px) {
 
     body {
         background-size: 200%; 
+    }
+
+    #opening_text {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
     }
 
 }

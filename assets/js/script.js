@@ -241,30 +241,23 @@ function revealHint() {
         document.getElementById('solution').innerHTML =`
         <p>(${symbol} ${document.getElementById('operand4').innerText})</p>`
     } else if (click === 1) {
-        document.getElementById('solution').innerHTML =`
-        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
-        <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>`
+        document.getElementById('solution').innerHTML +=(`<p>
+        ${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>`)
     } else if (click === 2) {
-        document.getElementById('solution').innerHTML =`
-        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
-        <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>
-        <p>${document.getElementById('operand2').innerText} y = ${multiple}</p>`
+        document.getElementById('solution').innerHTML += (`<p>
+        ${document.getElementById('operand2').innerText} y = ${multiple}</p>`)
     } else if (click === 3) {
-        document.getElementById('solution').innerHTML =`
-        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
-        <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>
-        <p>${document.getElementById('operand2').innerText} y = ${multiple}</p>
-        <p>(÷ ${document.getElementById('operand2').innerText})</p>`
+        document.getElementById('solution').innerHTML +=(`
+        <p>(÷ ${document.getElementById('operand2').innerText})</p>`)
     } else if (click === 4) {
-        document.getElementById('solution').innerHTML =`
-        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>
-        <p>${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>
-        <p>${document.getElementById('operand2').innerText} y = ${multiple}</p>
-        <p>(÷ ${document.getElementById('operand2').innerText})</p>
-        <p>y = ${multiple} ÷ ${document.getElementById('operand2').innerText}</p>`
+        document.getElementById('solution').innerHTML += (`
+        <p>y = ${multiple} ÷ ${document.getElementById('operand2').innerText}</p>`)
     }
 }
 
+/**
+ * Adds 1 to the number of clicks
+ */
 function addClick(){
     click += 1;
 }

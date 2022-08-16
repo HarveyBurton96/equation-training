@@ -1,5 +1,5 @@
 // Runs once the DOM loads
-// Checks for submit button or new equation button
+// Checks the data type of the button clicked 
 
 /*jshint esversion: 6 */
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 } 
 
-// Listens for the enter button and checks the submit question is not disabled
+// Listens for the enter button when the user is in the answer box and checks the submit question is not disabled
 document.getElementById('answer').addEventListener('keydown', function(event){
     if((event.key === 'Enter') && (document.getElementById('submit').disabled === false)) {
         checkAnswer();
@@ -35,15 +35,16 @@ document.getElementById('answer').addEventListener('keydown', function(event){
 newEquation();
 });
 
-// Declared outside of functions so it can be used in called by different functions
+// Declared outside of functions so they can be used by different functions
 let num2;
 let num1;
 let click;
 let symbol;
 
 /**
- * Creates random numbers to build our equation with
- * Also assigned if the symbol in the equation will be - or +
+ * Creates random numbers to build our equation with. 
+ * Also, assigned if the symbol in the equation will be - or +
+ * and inserts the numbers and symbol into the DOM
  */
 function newEquation() {
 
@@ -60,7 +61,7 @@ function newEquation() {
     if(symbolNum === 0) {
         symbol = '-';
         
-        // Checks that if the symbol is - then number times y is less than number 3
+        // Checks that when the symbol is - then num1 times y (num2) is less than num3
         while (num1*num2 < num3) {
             num2 = Math.floor(Math.random()*12)+1;
         }
@@ -73,7 +74,7 @@ function newEquation() {
         calculateEquationPlus(num1, num2, num3);
     }
 
-    
+    // inserts the numbers and symbol into the DOM
     document.getElementById('operand2').textContent = num1;
     document.getElementById('operand3').textContent = symbol;
     document.getElementById('operand4').textContent = num3;
@@ -82,6 +83,7 @@ function newEquation() {
 
 /** 
  * Calculates what's the equation is equal to if the symbol is +
+ * and inserts the calculated number into the DOM
 */
 function calculateEquationPlus(num1, num2, num3){
     let num4 = num1*num2 + num3;
@@ -90,6 +92,7 @@ function calculateEquationPlus(num1, num2, num3){
 
 /** 
  * Calculates what's the equation is equal to if the symbol is -
+ * and inserts the calculated number into the DOM
 */
 function calculateEquationMinus(num1, num2, num3) {
     let num4 = num1*num2 - num3;
@@ -97,7 +100,7 @@ function calculateEquationMinus(num1, num2, num3) {
 }
 
 /** 
- * Checks the users input answer to the generated y value
+ * Compares the users input answer to the generated y value
 */
 function checkAnswer() {
     let userAnswer = parseInt(document.getElementById('answer').value);
@@ -115,7 +118,7 @@ function checkAnswer() {
 }
 
 /** 
- * Adds one to the score for the correct answer
+ * Adds one to the score for the correct answer on the DOM
 */
 function incrementCorrectScore() {
     let previousScore = parseInt(document.getElementById('correct').innerText);
@@ -124,7 +127,7 @@ function incrementCorrectScore() {
 }
 
 /** 
- * Adds one to the score for the incorrect answer
+ * Adds one to the score for the incorrect answer on the DOM
 */
 function incrementIncorrectScore() {
     let previousScore = parseInt(document.getElementById('incorrect').innerText);
@@ -137,9 +140,11 @@ function incrementIncorrectScore() {
  */
 function displaySolution() {
 
-    let symbol = document.getElementById('operand3').innerText;
+    // Assigns information from the DOM required to display the solution
+    symbol = document.getElementById('operand3').innerText;
     let multiple = document.getElementById('operand2').innerText * num2;
 
+    // Swaps the symbol from + to - and vice versa
     if (symbol==='-') {
         symbol = '+';
     } else {
@@ -157,7 +162,8 @@ function displaySolution() {
 }
 
 /**
- * Inserts HTML code into the index page declaring the answer is correct
+ * Inserts HTML code into the index page declaring the answer is correct and depending 
+ * on the number of clicks recorded will supply and grade and the required number of hints used
  */
 function displayResponseCorrect() {
 
@@ -231,14 +237,16 @@ function emptyPreviousAnswer() {
  */
 function revealHint() {
 
-    let symbol = document.getElementById('operand3').innerText;
+    // Assigns information from the DOM required to display the solution
+    symbol = document.getElementById('operand3').innerText;
+    let multiple = document.getElementById('operand2').innerText * num2;
 
+    // Swaps the symbol from + to - and vice versa
     if (symbol==='-') {
         symbol = '+';
     } else {
         symbol = '-';
     }
-    let multiple = document.getElementById('operand2').innerText * num2;
 
     if (click === 0 ) {
         document.getElementById('solution').innerHTML =`

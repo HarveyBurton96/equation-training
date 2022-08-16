@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Open+Sans:wght@300&family=PT+Sans&family=Pangolin&family=Roboto&display=swap');
 
-/* Style for the index page*/
+/* General style for the index page*/
 body {
     font-family: Pangolin, Open Sans;
     margin: 0;
@@ -20,7 +20,7 @@ body {
     text-align: center;
 }
 
-.text-box {
+.text_box {
     width: 75%;
     height: auto;
     margin: 0 auto 3em;
@@ -53,7 +53,7 @@ body {
     font-size: larger;
 }
 
-.answer-text {
+.answer_text {
     width: 40px;
     display: inline-block;
 }
@@ -76,6 +76,8 @@ body {
     width: 100%;
     margin-top: 100px;
 }
+
+/* Style for the buttons */
 
 .button {
     font-weight: bold;
@@ -116,6 +118,8 @@ body {
 #hint:hover {
     text-decoration: underline;
 }
+
+/*The div is empty when the pages loads but text is added through the Javascript */
 
 #response {
     margin-top: 0;
@@ -175,7 +179,7 @@ body {
 
 @media (max-width: 350px) {
 
-    .text-box {
+    .text_box {
         width: 100%;
     }
 

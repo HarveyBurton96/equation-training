@@ -159,17 +159,17 @@ function displaySolution() {
 function displayResponseCorrect() {
 
     if (click === 0) {
-        document.getElementById('response').innerHTML = '<p class=score_correct>Correct A+ No Hint required!</p>';
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct!<br>A+ No Hint required!</p>';
     } else if (click === 1) {
-        document.getElementById('response').innerHTML = '<p class=score_correct>Correct A One Hint required</p>';
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct!<br>A One Hint required</p>';
     } else if (click === 2) {
-        document.getElementById('response').innerHTML = '<p class=score_correct>Correct B+ Two Hints required</p>';
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct!<br>B+ Two Hints required</p>';
     } else if (click === 3) {
-        document.getElementById('response').innerHTML = '<p class=score_correct>Correct B Three Hints required</p>';
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct!<br>B Three Hints required</p>';
     } else if (click === 4) {
-        document.getElementById('response').innerHTML = '<p class=score_correct>Correct C+ Four Hints required</p>';
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct!<br>C+ Four Hints required</p>';
     } else if (click === 5) {
-        document.getElementById('response').innerHTML = '<p class=score_correct>Correct C Five Hints required</p>';
+        document.getElementById('response').innerHTML = '<p class=score_correct>Correct!<br>C Five Hints required</p>';
     }
 
 }

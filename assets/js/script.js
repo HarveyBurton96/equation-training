@@ -51,7 +51,7 @@ function newEquation() {
 
     document.getElementById('answer').focus();
 
-    let num1 = Math.floor(Math.random()*11)+2;
+    num1 = Math.floor(Math.random()*11)+2;
     num2 = Math.floor(Math.random()*12)+1;
     let num3 = Math.floor(Math.random()*12)+1;
     let symbolNum = Math.floor(Math.random()*2);

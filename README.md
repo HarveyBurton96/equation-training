@@ -1,108 +1,128 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Equation Training!
 
-Welcome HarveyBurton96,
+This website is aim towards younger students starting to learn how to solve equations. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Users will use this website to test their understanding of simple equations and memorize the steps need to be taken to solve them. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![responsive](assets/images/Screenshot%20Responsiveness.png)
 
-## Gitpod Reminders
+## Features
+- ### The Header
+    - Positioned at the top of the page is the title of the page. It lets the user know what the website is aiming to provide for them. 
+    - It is coloured to look like a blackboard with white chalk written. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![header](assets/images/Screenshot%20header.png)
 
-`python3 -m http.server`
+- ### Game score
+    - This section contains text to explain what the user is required to do.
+    - It has a 'New equation' button that will generate a new equation whenever the user requires one.
+    - It also contains the correct and incorrect scores to let the user keep track of how many equations they have successfully and unsuccessfully solved.
 
-A blue button should appear to click: _Make Public_,
+![gameScore](assets/images/Screenshot%20Game%20Score.png)
 
-Another blue button should appear to click: _Open Browser_.
+- ### Equation area
+    - When the page loads the JavaScript will create a randomly generated equation. All the numbers used are from 1 to 12 this is to keep the equation simple and allows the division required to solve the equation just to be a simple mental division and not having to test their long division skills.
+    - The answer box is focused when a new equation is fun to stop the user having to click into the answer box every time. 
+    - The submit button will cause the solution to be shown and will compare the users answer to the correct answer.
+    - The hint button will reveal one step in the solution for each time it is clicked stopping at the second to last step.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![equationArea](assets/images/Screenshot%20equation%20area.png)
 
-A blue button should appear to click: _Make Public_,
+- ### Equation area solution
+    - once the submit button is clicked the solution will be loaded underneath the original equation. 
+    - If the user is correct, it will also grade the answer by how many times the user required the hint button.
 
-Another blue button should appear to click: _Open Browser_.
+![equationAreaSolution](assets/images/Screenshot%20equation%20area%20solution.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- ### Footer
+    - The footer contains a useful hint to help the user solve the equation.
 
-To log into the Heroku toolbelt CLI:
+![footer](assets/images/Screenshot%20footer.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Surface
+- ### Colours
+    - The background colour used for the body is #20433e and the background colour used for the div is #31343A. The colour of the main text is #fff, and the colour for the correct and incorrect text is #59EB35 and #FD7E79 respectively. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- ### Fonts
+    - The fonts used for the body is Pangolin with a backup of Open Sans. The font used for the equation and solution text is Kalam with a backup of Pangolin and Open Sans.
 
-------
+- ### Image
+    - The background image was found on [clipart-library.com](http://clipart-library.com/clip-art/math-transparent-background-1.htm).
 
-## Release History
+## Technologies used
+- ### HTML5
+    - As a structure language.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- ### CSS3
+    - As a style language.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- ### JavaScript
+    - For interactivity. 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- ### Google fonts
+    - As a font resource.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- ### GitHub
+    - As a software hosting platform.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- ### Git
+    - As a version control tracking system.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- ### Gitpod
+    - As a development hosting platform.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Testing
+- ### Functionality and compatibility testing
+    - I have used Chrome developer tools throughout the project for testing and solving style and responsiveness problems.
+    - I have tested this site across multiple virtual devices. I have also checked the site on iPhone, iPad, and a Samsung phone.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- ### Issues found during site development
+    - When testing the website during development I discovered as we need to leave the result once the solution has been submitted it allowed for the user to repeatedly enter the solution to the equation allowing them to generate more correct points. To solve this, I created two functions one that disables the submit button after its been clicked and one to enable the submit button once a new equation has been selected. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+    ![submitButton](assets/images/Screenshot%20disable%20enable%20functions.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+    - When checking my lighthouse score my SEO was not reaching 100%. On checking it was because my index page didn't have keywords and description to help users find the website. After adding this in the SEO score went to 100%. Please see the before and after screenshots below.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+    ![SEO Before](assets/images/Screenshot%20SEO.jpg)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+    ![SEO After](assets/images/Screenshot%20SEO%20modified.jpg)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- ### Performance testing
+    - Lighthouse report
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Lighthouse](assets/images/Screenshot%20lighthouse.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- ### Code Validation
+    - I used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), [Validator w3](https://validator.w3.org/), and [JShint](https://jshint.com/) to test CSS, HTML, and JavaScript respectively.
 
-------
+    - Validator response of CSS
 
-## FAQ about the uptime script
+    ![Validator-CSS](assets/images/Screenshot%20CSS%20validator.png)
 
-**Why have you added this script?**
+    - Validator response of HTML
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+    ![Validator-HTML](assets/images/Screenshot%20HTML%20validator.png)
 
-**How will this affect me?**
+    - Validator response of JavaScript
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+    ![Validator-JS](assets/images/Screenshot%20JS%20validator.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Deployment
+The site was deployed to GitHub pages. The steps to deploy the site are as follows:
+- In the GitHub repository, go to the ‘Settings’ tab.
+- They select the ‘Pages’ option in the ‘Code and automation’ section.
+- From the source dropdown select ‘Branch: main’ and then select ‘Save’.
+- The site is now published at https://harveyburton96.github.io/equation-training/
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Credits
+- To complete this project I used Code Institute student template: [gitpod-full-template](https://github.com/Code-Institute-Org/gitpod-full-template)
 
-**So….?**
+- Ideas and knowledge
+    - [w3schools](https://www.w3schools.com/)
+    - Code institute Diploma in Full Stack Software Development (Common Curriculum) course
+    - [Marcin-kli/MP1s README.md](https://github.com/marcin-kli/MP1/blob/Milestone-Projects/README.md#new-user-goals)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Screenshot
+Project screenshot
 
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+![Project-screenshot](assets/images/Screenshot%20fullwebsite.png)

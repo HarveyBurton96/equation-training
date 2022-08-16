@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             addClick();
         } else {
             newEquation();
-            enableSubmitButton();
+            enableButton();
             clearDisplaySolution();
             emptyPreviousAnswer();
             clearDisplayResponse ();
@@ -114,7 +114,7 @@ function checkAnswer() {
 
     displaySolution();
 
-    disableSubmitButton();
+    disableButton();
 }
 
 /** 
@@ -211,7 +211,7 @@ function clearDisplaySolution(){
  * Disables the submit button
  * and the hint button
  */
-function disableSubmitButton() {
+function disableButton() {
     document.getElementById('submit').disabled=true;
     document.getElementById('hint').disabled=true;
 }
@@ -220,7 +220,7 @@ function disableSubmitButton() {
  * Enables the submit button
  * and the hint button
  */
-function enableSubmitButton() {
+function enableButton() {
     document.getElementById('submit').disabled=false;
     document.getElementById('hint').disabled=false;
 }

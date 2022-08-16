@@ -1,6 +1,8 @@
 // Runs once the DOM loads
 // Checks for submit button or new equation button
 
+/*jshint esversion: 6 */
+
 document.addEventListener('DOMContentLoaded', function() {
     let buttons=document.getElementsByTagName('button');
 
@@ -28,15 +30,16 @@ document.getElementById('answer').addEventListener('keydown', function(event){
     if((event.key === 'Enter') && (document.getElementById('submit').disabled === false)) {
         checkAnswer();
     }
-    })
+    });
 
 newEquation();
 });
 
-// Declared outside of functions so it can be used in the checkAnswer() function
+// Declared outside of functions so it can be used in called by different functions
 let num2;
 let num1;
-let click
+let click;
+let symbol;
 
 /**
  * Creates random numbers to build our equation with
@@ -55,7 +58,7 @@ function newEquation() {
     
     // Assigns symbol for the equation 
     if(symbolNum === 0) {
-        var symbol = '-';
+        symbol = '-';
         
         // Checks that if the symbol is - then number times y is less than number 3
         while (num1*num2 < num3) {
@@ -65,7 +68,7 @@ function newEquation() {
         calculateEquationMinus(num1, num2, num3);
 
     } else {
-        var symbol ='+';
+        symbol ='+';
 
         calculateEquationPlus(num1, num2, num3);
     }
@@ -239,19 +242,29 @@ function revealHint() {
 
     if (click === 0 ) {
         document.getElementById('solution').innerHTML =`
-        <p>(${symbol} ${document.getElementById('operand4').innerText})</p>`
+        <p>
+            (${symbol} ${document.getElementById('operand4').innerText})
+        </p>`;
     } else if (click === 1) {
-        document.getElementById('solution').innerHTML +=(`<p>
-        ${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}</p>`)
+        document.getElementById('solution').innerHTML += (`
+        <p>
+            ${document.getElementById('operand2').innerText} y = ${document.getElementById('operand1').innerText} ${symbol} ${document.getElementById('operand4').innerText}
+        </p>`);
     } else if (click === 2) {
-        document.getElementById('solution').innerHTML += (`<p>
-        ${document.getElementById('operand2').innerText} y = ${multiple}</p>`)
+        document.getElementById('solution').innerHTML += (`
+        <p>
+            ${document.getElementById('operand2').innerText} y = ${multiple}
+        </p>`);
     } else if (click === 3) {
         document.getElementById('solution').innerHTML +=(`
-        <p>(÷ ${document.getElementById('operand2').innerText})</p>`)
+        <p>
+            (÷ ${document.getElementById('operand2').innerText})
+        </p>`);
     } else if (click === 4) {
         document.getElementById('solution').innerHTML += (`
-        <p>y = ${multiple} ÷ ${document.getElementById('operand2').innerText}</p>`)
+        <p>
+            y = ${multiple} ÷ ${document.getElementById('operand2').innerText}
+        </p>`);
     }
 }
 

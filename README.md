@@ -8,8 +8,8 @@ Users will use this website to test their understanding of simple equations and 
 
 ## Features
 - ### The Header
-    - Positioned at the top of the page is the title of the page. It lets the user know what the website is aiming to provide for them. 
-    - It is coloured to look like a blackboard with white chalk written. 
+    - Positioned at the top of the page is the title of the page. This allows the user to understand what they the website is providing. 
+    - It is coloured to look like a blackboard with white chalk written on it. 
 
 ![header](assets/images/Screenshot%20header.png)
 
@@ -22,7 +22,7 @@ Users will use this website to test their understanding of simple equations and 
 
 - ### Equation area
     - When the page loads the JavaScript will create a randomly generated equation. All the numbers used are from 1 to 12 this is to keep the equation simple and allows the division required to solve the equation just to be a simple mental division and not having to test their long division skills.
-    - The answer box is focused when a new equation is fun to stop the user having to click into the answer box every time. 
+    - The answer box is focused when a new equation is generated this is to stop the user having to click into the answer box every time. 
     - The submit button will cause the solution to be shown and will compare the users answer to the correct answer.
     - The hint button will reveal one step in the solution for each time it is clicked stopping at the second to last step.
 
@@ -35,13 +35,13 @@ Users will use this website to test their understanding of simple equations and 
 ![equationAreaSolution](assets/images/Screenshot%20equation%20area%20solution.png)
 
 - ### Footer
-    - The footer contains a useful hint to help the user solve the equation.
+    - The footer contains a useful hint to help the user solve the equations.
 
 ![footer](assets/images/Screenshot%20footer.png)
 
 ## Surface
 - ### Colours
-    - The background colour used for the body is #20433e and the background colour used for the div is #31343A. The colour of the main text is #fff, and the colour for the correct and incorrect text is #59EB35 and #FD7E79 respectively. 
+    - The background colour used for the body is #20433e and the background colour used for the divs is #31343A. The colour of the main text is #fff, and the colour for the correct and incorrect text is #59EB35 and #FD7E79 respectively. 
 
 - ### Fonts
     - The fonts used for the body is Pangolin with a backup of Open Sans. The font used for the equation and solution text is Kalam with a backup of Pangolin and Open Sans.
@@ -77,7 +77,7 @@ Users will use this website to test their understanding of simple equations and 
     - I have tested this site across multiple virtual devices. I have also checked the site on iPhone, iPad, and a Samsung phone.
 
 - ### Issues found during site development
-    - When testing the website during development I discovered as we need to leave the result once the solution has been submitted it allowed for the user to repeatedly enter the solution to the equation allowing them to generate more correct points. To solve this, I created two functions one that disables the submit button after its been clicked and one to enable the submit button once a new equation has been selected. 
+    - When testing the website during development I discovered as we need to leave the result once the solution has been submitted to allow the user to look over the solution. It also allowed for the user to repeatedly enter the same solution to the equation allowing them to generate more correct points. To solve this, I created two functions one that disables the submit button after its been clicked and one to enable the submit button once a new equation has been selected. 
 
     ![submitButton](assets/images/Screenshot%20disable%20enable%20functions.png)
 

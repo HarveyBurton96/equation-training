@@ -3,6 +3,8 @@
 
 /*jshint esversion: 6 */
 
+// The code from line 8 to 15 is not my own and was from the code institute Love Maths project the video is located here https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first
+//The code is also available in a repository I created as I followed along the guide located here https://github.com/HarveyBurton96/love-maths
 document.addEventListener('DOMContentLoaded', function() {
     let buttons=document.getElementsByTagName('button');
 
@@ -20,9 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             emptyPreviousAnswer();
             clearDisplayResponse ();
         }
-
     });
-
 } 
 
 // Listens for the enter button when the user is in the answer box and checks the submit question is not disabled

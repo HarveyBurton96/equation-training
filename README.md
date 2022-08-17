@@ -1,6 +1,6 @@
 # Equation Training!
 
-This website is aim towards younger students starting to learn how to solve equations. 
+This website is aimed towards younger students starting to learn how to solve equations. 
 
 Users will use this website to test their understanding of simple equations and memorize the steps need to be taken to solve them. 
 
@@ -8,7 +8,7 @@ Users will use this website to test their understanding of simple equations and 
 
 ## Features
 - ### The Header
-    - Positioned at the top of the page is the title of the page. This allows the user to understand what they the website is providing. 
+    - Positioned at the top of the page is the title of the page. This allows the user to understand what the website is providing. 
     - It is coloured to look like a blackboard with white chalk written on it. 
 
 ![header](assets/images/Screenshot%20header.png)
@@ -77,7 +77,7 @@ Users will use this website to test their understanding of simple equations and 
     - I have tested this site across multiple virtual devices. I have also checked the site on iPhone, iPad, and a Samsung phone.
 
 - ### Issues found during site development
-    - When testing the website during development I discovered as we need to leave the result once the solution has been submitted to allow the user to look over the solution. It also allowed for the user to repeatedly enter the same solution to the equation allowing them to generate more correct points. To solve this, I created two functions one that disables the submit button after its been clicked and one to enable the submit button once a new equation has been selected. 
+    - When testing the website during development I discovered as we need to leave the result once the solution has been submitted to allow the user to look over the solution. It also allowed for the user to repeatedly enter the same solution to the equation allowing them to generate more correct points. To solve this, I created two functions one that disables the submit button after it has been clicked and one to enable the submit button once a new equation has been selected. 
 
     ![submitButton](assets/images/Screenshot%20disable%20enable%20functions.png)
 
